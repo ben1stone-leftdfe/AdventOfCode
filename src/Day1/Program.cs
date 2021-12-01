@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helpers;
+using System;
 
 namespace Day1
 {
@@ -6,7 +7,13 @@ namespace Day1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var report = FileReader.ReadIntegersFromTextFile("../../../Data/input.txt");
+
+            var analyser = new SonarSweepAnalyser();
+
+            var result = analyser.GetDepthIncreasingCount(report);
+
+            Console.WriteLine($"Count: {result}");
         }
     }
 }
