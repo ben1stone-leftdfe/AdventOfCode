@@ -12,5 +12,16 @@ namespace Helpers
                 func(collection[i], collection[i + 1]);
             } 
         }
+
+        public static void ForEachRollingGroupSumAndNextGroup(this IList<int> collection, Action<int, int> func)
+        {
+            for (int i = 0; i < collection.Count - 3; i++)
+            {
+                var group = collection[i] + collection[i + 1] + collection[i + 2];
+                var nextGroup = collection[i + 1] + collection[i + 2] + collection[i + 3];
+
+                func(group, nextGroup);
+            }
+        }
     }
 }

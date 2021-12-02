@@ -13,7 +13,11 @@ namespace Day1
 
             var result = analyser.GetDepthIncreasingCount(report);
 
-            Console.WriteLine($"Count: {result}");
+            Console.WriteLine($"Part one: {result}");
+
+            var partTwoResult = analyser.GetRollingDepthIncreasingCount(report);
+
+            Console.WriteLine($"Part two: {partTwoResult}");
         }
     }
 }

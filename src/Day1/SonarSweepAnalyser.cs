@@ -19,5 +19,20 @@ namespace Day1
 
             return increasingDepthCount;
         }
+
+        public int GetRollingDepthIncreasingCount(IList<int> report)
+        {
+            int increasingDepthCount = 0;
+
+            report.ForEachRollingGroupSumAndNextGroup((firstGroup, nextGroup) =>
+            {
+                if (nextGroup > firstGroup)
+                {
+                    increasingDepthCount++;
+                }
+            });
+
+            return increasingDepthCount;
+        }
     }
 }
