@@ -5,11 +5,11 @@ namespace Day2
 {
     public class PositionCalculator
     {
-        protected int _depth = 0;
-        protected int _horizontal = 0;
-        protected int _aim = 0;
+        private int _depth = 0;
+        private int _horizontal = 0;
+        private int _aim = 0;
 
-        protected Queue<AbstractCommand> _commands = new Queue<AbstractCommand>();
+        private Queue<AbstractCommand> _commands = new Queue<AbstractCommand>();
 
         public int Area => _depth * _horizontal;
 
