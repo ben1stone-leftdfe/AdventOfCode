@@ -45,9 +45,9 @@ namespace Day5
 
             var grid = new int[maxHeight + 1, maxWidth + 1];
 
-            foreach (var line in lines)
+            foreach (var line in lines.Where(line => line.IsDiagonal == false))
             {
-                if (line.Start.x == line.End.x )
+                if (line.IsVertical)
                 { 
                     for (var y = 0; y < maxHeight; y++)
                     {
@@ -58,7 +58,7 @@ namespace Day5
                     }
                 }
 
-                if (line.Start.y == line.End.y)
+                if (line.IsHorizontal)
                 {
                     for (var x = 0; x < maxWidth; x++)
                     {
@@ -113,5 +113,9 @@ namespace Day5
             Start = new Position(points[0]);
             End = new Position(points[1]);
         }
+
+        public bool IsDiagonal => Start.x != End.x && Start.y != End.y;
+        public bool IsVertical => Start.x == End.x;
+        public bool IsHorizontal => Start.y == End.y;
     }
 }
