@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Day10.Extensions;
+using System.Collections.Generic;
 
 namespace Day10
 {
